@@ -1,11 +1,11 @@
 --!strict
-local our_module = {}
+local hep_reduce = {}
 
 -- Wait asynchronously for an x amount of time
 -- @param seconds - setting it to 0 will default to RunService.Heartbeat:Wait()
 -- @param func_inside - runs inside the task.spawn or task.delay, depending on seconds choice
--- @usage our_module.wait_async(3, test_wait_async)
-function our_module.wait_async(seconds: number, func_inside: () -> ()): thread
+-- @usage hep_reduce.wait_async(3, test_wait_async)
+function hep_reduce.wait_async(seconds: number, func_inside: () -> ()): thread
 	if type(seconds) ~= "number" or seconds ~= seconds then
 		error("Invalid seconds provided!")
 	end
@@ -34,8 +34,8 @@ end
 -- @param seconds - setting it to 0 will default to RunService.Heartbeat:Wait()
 -- @param func_inside - runs inside the task.spawn or task.delay, depending on seconds choice
 -- @param shall_break - if this is true, the loop will break
--- @usage our_module.while_wait_async(1, test_while_wait_async, false)
-function our_module.while_wait_async(seconds: number, func_inside: () -> (), shall_break: boolean): thread
+-- @usage hep_reduce.while_wait_async(1, test_while_wait_async, false)
+function hep_reduce.while_wait_async(seconds: number, func_inside: () -> (), shall_break: boolean): thread
 	if type(seconds) ~= "number" or seconds ~= seconds then
 		error("Invalid seconds provided!")
 	end
@@ -75,4 +75,4 @@ function our_module.while_wait_async(seconds: number, func_inside: () -> (), sha
 	return thread
 end
 
-return our_module
+return hep_reduce

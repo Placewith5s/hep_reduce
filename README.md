@@ -2,12 +2,12 @@
 - A module for Roblox Studio to reduce coding repetitiveness.
 
 ## Installation
-
+[hep_reduce.rbxm](https://github.com/Placewith5s/hep_reduce/releases/download/0.1.0/hep_reduce.rbxm)
 
 ## Usage
 ```lua
 --!strict
-local our_module = require(game.ServerScriptService.our_module)
+local hep_reduce = require(game.ServerScriptService.hep_reduce)
 
 repeat task.wait() until #game.Players:GetPlayers() > 0 -- studio's poop break :)
 
@@ -20,8 +20,8 @@ local function test_while_wait_async()
 	print("Repeated hello from while async serial")
 end
 
-local cancelable_thread: thread = our_module.wait_async(3, test_wait_async)
-local cancelable_thread_2: thread = our_module.while_wait_async(1, test_while_wait_async, false)
+local cancelable_thread: thread = hep_reduce.wait_async(3, test_wait_async)
+local cancelable_thread_2: thread = hep_reduce.while_wait_async(1, test_while_wait_async, false)
 ```
 
 ## Documentation
